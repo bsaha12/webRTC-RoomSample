@@ -17,7 +17,7 @@ io.on("connection", function (socket) {
     var rooms = io.sockets.adapter.rooms; //create default room.
 
     var room = rooms.get(roomname); //get room from client.
-    console.log(room);
+    // console.log(room);
 
     //if client has not pass any room.so only one user joined the room
     if (room == undefined) {
@@ -32,7 +32,7 @@ io.on("connection", function (socket) {
       socket.emit("full");
       console.log("Room full for now"); //not more than 2 user joined the room.
     }
-    console.log(rooms);
+    // console.log(rooms);
   });
 
   //1st step ready for join
@@ -42,15 +42,15 @@ io.on("connection", function (socket) {
   });
   //second step==>candidate in both side. first getting the candidate on server side then sending the candidate in client side.
   socket.on("candidate", function (candidate, roomName) {
-    console.log("candidate");
-    console.log(candidate);
+    // console.log("candidate");
+    // console.log(candidate);
     socket.broadcast.to(roomName).emit("candidate", candidate);
   });
 
   //create an offer==>create on both side. so getting the offer on server side and sending to the clinet side.
   socket.on("offer", function (offer, roomName) {
     console.log("offer");
-    console.log(offer);
+    // console.log(offer);
     socket.broadcast.to(roomName).emit("offer", offer);
   });
 

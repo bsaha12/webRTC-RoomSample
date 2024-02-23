@@ -14,6 +14,8 @@ h2 {
   max-width: 600px;
   background-color: #555;
   margin: 30px auto;
+  border-radius: 1rem;
+  padding-top: 5px;
 }
 
 #chat-window {
@@ -62,20 +64,29 @@ input {
   font-size: 18px;
   padding: 12px 0;
   width: 100%;
+  border-radius: 1rem;
+  border: none;
 }
 
 #video-chat-rooms {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+#video-chat-rooms > video{
+  margin: 2rem 0;
+  border-radius: 2rem;
 }
 
 .btn-group button {
-  background-color: #000000; /* Green background */
+  background-color: #090120; /* Green background */
   border: 1px solid white; /* Green border */
   color: white; /* White text */
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
+  margin: 0 1rem;
+  border-radius: 1rem;
 }
 
 .btn-group button:not(:last-child) {
@@ -97,4 +108,15 @@ input {
 .btn-group {
   display: flex;
   justify-content: center;
+}
+
+
+@media (max-width: 991px)  {
+  
+  #video-chat-rooms {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
 }
